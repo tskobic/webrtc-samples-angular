@@ -1,0 +1,8 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "typescript.format.enable": true,
+    "eslint.format.enable": false,
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
+}
