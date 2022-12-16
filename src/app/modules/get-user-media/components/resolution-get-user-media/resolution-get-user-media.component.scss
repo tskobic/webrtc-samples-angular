@@ -1,0 +1,26 @@
+.container {
+  padding-bottom: 100px;
+}
+
+.video {
+  display: block;
+  width: 640px;
+  height: 480px;
+  background: black;
+  margin-inline: auto;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+mat-slider {
+  width: 300px;
+}
+
+.mat-slider-thumb-label {
+  display: flex !important;
+}

@@ -7,9 +7,10 @@ import { BasicGetUserMediaComponent } from './components/basic-get-user-media/ba
 import { SharedModule } from '../../shared/shared.module';
 import { CanvasGetUserMediaComponent } from './components/canvas-get-user-media/canvas-get-user-media.component';
 import { FilterGetUserMediaComponent } from './components/filter-get-user-media/filter-get-user-media.component';
+import { ResolutionGetUserMediaComponent } from './components/resolution-get-user-media/resolution-get-user-media.component';
 
 @NgModule({
-  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent],
+  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent],
   imports: [CommonModule, GetUserMediaRoutingModule, SharedModule],
 })
 export class GetUserMediaModule { }

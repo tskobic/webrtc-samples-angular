@@ -4,12 +4,14 @@ import { BasicGetUserMediaComponent } from './components/basic-get-user-media/ba
 import { CanvasGetUserMediaComponent } from './components/canvas-get-user-media/canvas-get-user-media.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FilterGetUserMediaComponent } from './components/filter-get-user-media/filter-get-user-media.component';
+import { ResolutionGetUserMediaComponent } from './components/resolution-get-user-media/resolution-get-user-media.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, children: [
     { path: 'basic', component: BasicGetUserMediaComponent},
     { path: 'canvas', component: CanvasGetUserMediaComponent},
-    { path: 'filter', component: FilterGetUserMediaComponent}
+    { path: 'filter', component: FilterGetUserMediaComponent},
+    { path: 'resolution', component: ResolutionGetUserMediaComponent},
   ]}
 ];
 

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="buttons">
+    <button id="qvga" mat-raised-button color="primary">QVGA</button>
+    <button id="vga" mat-raised-button color="primary">VGA</button>
+    <button id="hd" mat-raised-button color="primary">HD</button>
+    <button id="full-hd" mat-raised-button color="primary">Full HD</button>
+    <button id="televisionFourK" mat-raised-button color="primary">Television 4K (3840x2160)</button>
+    <button id="cinemaFourK" mat-raised-button color="primary">Cinema 4K (4096x2160)</button>
+    <button id="eightK" mat-raised-button color="primary">8K</button>
+  </div>
+  <video #video class="video" autoplay playsinline></video>
+  <div>
+    <mat-slider min="0" max="10" step="1" thumbLabel>
+    </mat-slider>
+  </div>
+</div>
