@@ -10,18 +10,22 @@
 
 .video {
   display: block;
-  width: 640px;
-  height: 480px;
+  width: auto;
+  height: auto;
   background: black;
   margin-inline: auto;
   margin-bottom: 20px;
 }
 
 .slider-wrapper {
-  width: 640px;
   margin-inline: auto;
 }
 
 mat-slider {
+  margin-left: 20px;
   width: 300px;
+}
+
+.active {
+  display: none;
 }

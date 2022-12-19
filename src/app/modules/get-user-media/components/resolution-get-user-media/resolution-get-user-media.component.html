@@ -8,10 +8,19 @@
     <button id="cinemaFourK" mat-raised-button color="primary" (click)="getMedia('cinemaFourK')">Cinema 4K (4096x2160)</button>
     <button id="eightK" mat-raised-button color="primary" (click)="getMedia('eightK')">8K</button>
   </div>
+  <div [ngClass]="!showVideoBlock ? 'active' : ''">
+    <p>{{dimensions}}</p>
     <video #video class="video" autoplay playsinline></video>
     <div class="slider-wrapper">
+      <span>Width: {{width}} px</span>
       <mat-slider min="0" max="7680" discrete>
-        <input matSliderThumb>
+        <input matSliderThumb [value]="width" (valueChange)="constraintChange($event)">
       </mat-slider>
+      <div>
+        <mat-checkbox [(ngModel)]="sizeLock" (ngModelChange)="sizeLockChange()"> Lock video size</mat-checkbox>
+        <mat-checkbox [(ngModel)]="aspectLock"> Lock aspect ratio</mat-checkbox>
+      </div>
     </div>
+    <p>{{errorMessage}}</p>
+  </div>
 </div>
