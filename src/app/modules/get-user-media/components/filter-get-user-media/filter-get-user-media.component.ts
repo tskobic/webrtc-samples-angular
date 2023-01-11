@@ -18,8 +18,8 @@ export class FilterGetUserMediaComponent implements AfterViewInit {
 
   options = ['none', 'blur', 'grayscale', 'invert', 'sepia'];
 
-  @ViewChild('video') video!: ElementRef;
-  @ViewChild('canvas') canvas!: ElementRef;
+  @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
+  @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
 
   constructor() {}
 
@@ -36,8 +36,8 @@ export class FilterGetUserMediaComponent implements AfterViewInit {
   }
 
   async onClick() {
-    const video = this.video.nativeElement as HTMLVideoElement;
-    const canvas = this.canvas.nativeElement as HTMLCanvasElement;
+    const video = this.video.nativeElement;
+    const canvas = this.canvas.nativeElement;
     canvas.className = `canvas ${this.selectedOption}`;
     canvas
       .getContext('2d')

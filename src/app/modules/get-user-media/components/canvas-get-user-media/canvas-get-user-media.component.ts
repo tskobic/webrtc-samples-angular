@@ -6,8 +6,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   styleUrls: ['./canvas-get-user-media.component.scss']
 })
 export class CanvasGetUserMediaComponent implements AfterViewInit {
-  @ViewChild('video') video!: ElementRef;
-  @ViewChild('canvas') canvas!: ElementRef;
+  @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
+  @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
 
   async ngAfterViewInit() {
     try {
@@ -19,8 +19,8 @@ export class CanvasGetUserMediaComponent implements AfterViewInit {
   }
 
   async onClick() {
-    const video = this.video.nativeElement as HTMLVideoElement;
-    const canvas = this.canvas.nativeElement as HTMLCanvasElement;
+    const video = this.video.nativeElement;
+    const canvas = this.canvas.nativeElement;
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d')?.drawImage(video, 0, 0, canvas.width, canvas.height);

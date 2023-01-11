@@ -6,7 +6,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./basic-get-user-media.component.scss']
 })
 export class BasicGetUserMediaComponent implements OnInit {
-  @ViewChild('video') video!: ElementRef;
+  @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
 
   constructor() { }
 

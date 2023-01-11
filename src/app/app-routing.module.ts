@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'getUserMedia',
+    path: 'get-user-media',
     loadChildren: () =>
       import('./modules/get-user-media/get-user-media.module').then(
         (m) => m.GetUserMediaModule

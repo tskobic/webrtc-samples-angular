@@ -8,9 +8,10 @@ import { SharedModule } from '../../shared/shared.module';
 import { CanvasGetUserMediaComponent } from './components/canvas-get-user-media/canvas-get-user-media.component';
 import { FilterGetUserMediaComponent } from './components/filter-get-user-media/filter-get-user-media.component';
 import { ResolutionGetUserMediaComponent } from './components/resolution-get-user-media/resolution-get-user-media.component';
+import { AudioComponent } from './components/audio/audio.component';
 
 @NgModule({
-  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent],
+  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent, AudioComponent],
   imports: [CommonModule, GetUserMediaRoutingModule, SharedModule],
 })
 export class GetUserMediaModule { }

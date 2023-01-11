@@ -66,7 +66,7 @@ const RES_CONSTRAINTS = [
 })
 export class ResolutionGetUserMediaComponent implements OnInit {
   resConstraints = RES_CONSTRAINTS;
-  @ViewChild('video') video!: ElementRef;
+  @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
   stream!: MediaStream;
   dimensions = '';
   errorMessage = '';
@@ -101,7 +101,7 @@ export class ResolutionGetUserMediaComponent implements OnInit {
 
   gotStream() {
     this.showVideoBlock = true;
-    const video = this.video.nativeElement as HTMLVideoElement;
+    const video = this.video.nativeElement;
     video.srcObject = this.stream;
     const track = this.stream.getVideoTracks()[0];
     const constraints = track.getConstraints();
@@ -117,7 +117,7 @@ export class ResolutionGetUserMediaComponent implements OnInit {
   async constraintChange(width: number) {
     this.width = width;
     const track = this.stream.getVideoTracks()[0];
-    const video = this.video.nativeElement as HTMLVideoElement;
+    const video = this.video.nativeElement;
     let constraints: MediaTrackConstraints;
     if (this.aspectLock) {
       constraints = {
@@ -141,9 +141,9 @@ export class ResolutionGetUserMediaComponent implements OnInit {
   }
 
   displayVideoDimensions(whereSeen: string) {
-    const video = this.video.nativeElement as HTMLVideoElement;
+    const video = this.video.nativeElement;
     if (video.videoWidth) {
-      this.dimensions= 'Actual video dimensions: ' + video.videoWidth +
+      this.dimensions = 'Actual video dimensions: ' + video.videoWidth +
         'x' + video.videoHeight + 'px.';
       if (this.currentWidth !== video.videoWidth ||
         this.currentHeight !== video.videoHeight) {
@@ -157,7 +157,7 @@ export class ResolutionGetUserMediaComponent implements OnInit {
   }
 
   sizeLockChange() {
-    const video = this.video.nativeElement as HTMLVideoElement;
+    const video = this.video.nativeElement;
     if (this.sizeLock) {
       console.log('Setting fixed size');
       video.style.width = '100%';
