@@ -10,7 +10,6 @@ export class AudioComponent implements AfterViewInit {
   @ViewChild('audio') audio!: ElementRef<HTMLAudioElement>;
 
   async ngAfterViewInit() {
-    var test:MediaStream;
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
         audio: true,
