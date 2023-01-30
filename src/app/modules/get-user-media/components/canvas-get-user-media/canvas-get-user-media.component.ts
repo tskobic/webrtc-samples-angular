@@ -1,17 +1,20 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-canvas-get-user-media',
   templateUrl: './canvas-get-user-media.component.html',
   styleUrls: ['./canvas-get-user-media.component.scss']
 })
-export class CanvasGetUserMediaComponent implements AfterViewInit {
+export class CanvasGetUserMediaComponent implements AfterViewInit, OnDestroy {
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
+
+  stream!: MediaStream;
 
   async ngAfterViewInit() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({audio: false, video: true});
+      this.stream = stream;
       this.video.nativeElement.srcObject = stream;
     } catch (error: any) {
       console.log(error.message, error.name);
@@ -24,5 +27,9 @@ export class CanvasGetUserMediaComponent implements AfterViewInit {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d')?.drawImage(video, 0, 0, canvas.width, canvas.height);
+  }
+
+  ngOnDestroy() {
+    this.stream?.getTracks().forEach(track => track.stop());
   }
 }

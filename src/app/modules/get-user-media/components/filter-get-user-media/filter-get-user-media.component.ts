@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-filter-get-user-media',
   templateUrl: './filter-get-user-media.component.html',
   styleUrls: ['./filter-get-user-media.component.scss'],
 })
-export class FilterGetUserMediaComponent implements AfterViewInit {
+export class FilterGetUserMediaComponent implements AfterViewInit, OnDestroy {
   selectedOption: string = 'none';
 
   currentClasses: Record<string, boolean> = {
@@ -21,6 +21,8 @@ export class FilterGetUserMediaComponent implements AfterViewInit {
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
 
+  stream!: MediaStream;
+
   constructor() {}
 
   async ngAfterViewInit() {
@@ -29,6 +31,7 @@ export class FilterGetUserMediaComponent implements AfterViewInit {
         audio: false,
         video: true,
       });
+      this.stream = stream;
       this.video.nativeElement.srcObject = stream;
     } catch (error: any) {
       console.log(error.message, error.name);
@@ -52,5 +55,9 @@ export class FilterGetUserMediaComponent implements AfterViewInit {
         this.currentClasses[key] = false;
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.stream?.getTracks().forEach(track => track.stop());
   }
 }

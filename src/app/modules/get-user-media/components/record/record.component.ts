@@ -1,11 +1,11 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-record',
   templateUrl: './record.component.html',
   styleUrls: ['./record.component.scss']
 })
-export class RecordComponent {
+export class RecordComponent implements OnDestroy {
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
   @ViewChild('record') recordedVideo!: ElementRef<HTMLVideoElement>;
 
@@ -53,9 +53,9 @@ export class RecordComponent {
     }
   }
 
-  onPlay(){
+  onPlay() {
     const mimeType = this.selectedOption.split(';', 1)[0];
-    const superBuffer = new Blob(this.recordedBlobs, {type: mimeType});
+    const superBuffer = new Blob(this.recordedBlobs, { type: mimeType });
     this.recordedVideo.nativeElement.src = '';
     this.recordedVideo.nativeElement.srcObject = null;
     this.recordedVideo.nativeElement.src = window.URL.createObjectURL(superBuffer);
@@ -63,13 +63,13 @@ export class RecordComponent {
     this.recordedVideo.nativeElement.play();
   }
 
-  onDownload(){
-    const blob = new Blob(this.recordedBlobs, {type: 'video/webm'});
+  onDownload() {
+    const blob = new Blob(this.recordedBlobs, { type: 'video/webm' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = 'test.webm';
+    a.download = 'recording.webm';
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {
@@ -78,7 +78,7 @@ export class RecordComponent {
     }, 100);
   }
 
-  private startRecording(){
+  private startRecording() {
     this.recordedBlobs = [];
     const options = { mimeType: this.selectedOption };
     try {
@@ -102,7 +102,7 @@ export class RecordComponent {
     console.log('MediaRecorder started', this.mediaRecorder);
   }
 
-  private stopRecording(){
+  private stopRecording() {
     this.mediaRecorder.stop();
   }
 
@@ -123,5 +123,9 @@ export class RecordComponent {
     if (event.data && event.data.size > 0) {
       this.recordedBlobs.push(event.data)
     }
+  }
+
+  ngOnDestroy() {
+    this.stream?.getTracks().forEach(track => track.stop());
   }
 }

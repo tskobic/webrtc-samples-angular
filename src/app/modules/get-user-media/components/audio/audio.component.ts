@@ -1,13 +1,15 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-audio',
   templateUrl: './audio.component.html',
   styleUrls: ['./audio.component.scss']
 })
-export class AudioComponent implements AfterViewInit {
+export class AudioComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('audio') audio!: ElementRef<HTMLAudioElement>;
+
+  stream!: MediaStream;
 
   async ngAfterViewInit() {
     try {
@@ -15,11 +17,16 @@ export class AudioComponent implements AfterViewInit {
         audio: true,
         video: false,
       });
+      this.stream = stream;
       const audioTracks = stream.getAudioTracks();
       console.log('Using audio device: ' + audioTracks[0].label);
       this.audio.nativeElement.srcObject = stream;
     } catch (error: any) {
       console.log(error.message, error.name);
     }
+  }
+
+  ngOnDestroy() {
+    this.stream.getTracks().forEach(track => track.stop());
   }
 }
