@@ -9,9 +9,10 @@ import { CanvasGetUserMediaComponent } from './components/canvas-get-user-media/
 import { FilterGetUserMediaComponent } from './components/filter-get-user-media/filter-get-user-media.component';
 import { ResolutionGetUserMediaComponent } from './components/resolution-get-user-media/resolution-get-user-media.component';
 import { AudioComponent } from './components/audio/audio.component';
+import { RecordComponent } from './components/record/record.component';
 
 @NgModule({
-  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent, AudioComponent],
+  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent, AudioComponent, RecordComponent],
   imports: [CommonModule, GetUserMediaRoutingModule, SharedModule],
 })
 export class GetUserMediaModule { }

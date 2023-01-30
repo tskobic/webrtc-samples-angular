@@ -82,6 +82,10 @@ html * {
   font-size: 1.6rem;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -150,3 +154,4 @@ nav li a:visited {
   font-size: 1.8rem;
   font-weight: 600;
 }
+

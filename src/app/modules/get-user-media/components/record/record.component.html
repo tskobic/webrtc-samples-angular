@@ -1,0 +1,31 @@
+<div class="container-vertical">
+  <video #video class="video" autoplay playsinline>
+  </video>
+  <video #record class="video">
+  </video>
+  <div class="container-horizontal">
+    <button mat-raised-button color="primary" [disabled]="startButton" (click)="onStart()">
+      Start camera
+    </button>
+    <button mat-raised-button color="primary" [disabled]="recordButton" (click)="onRecord()">
+      {{recordButtonText}}
+    </button>
+    <button mat-raised-button color="primary" [disabled]="playButton" (click)="onPlay()">
+      Play
+    </button>
+    <button mat-raised-button color="primary" [disabled]="downloadButton" (click)="onDownload()">
+      Download
+    </button>
+  </div>
+  <div class="container-horizontal options">
+    <mat-form-field appearance="fill" class="select">
+      <mat-label>Recording format:</mat-label>
+      <mat-select [(value)]="selectedOption" [disabled]="codecSelect">
+        <mat-option *ngFor="let mimeType of mimeTypes" [value]="mimeType">
+          {{mimeType}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox [checked]="echo">Echo cancellation:</mat-checkbox>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.video {
+  display: block;
+  width: 320px;
+  height: 240px;
+  background: black;
+}
+
+.container {
+  &-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-horizontal {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.options {
+  align-self: flex-start;
+}
+
+.select {
+  width: 300px;
+}
