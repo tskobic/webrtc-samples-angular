@@ -1,13 +1,16 @@
-<video #video class="video" [ngClass]="currentClasses" autoplay playsinline></video>
-<mat-form-field appearance="fill">
-  <mat-label>Filter:</mat-label>
-  <mat-select [(value)]="selectedOption" (valueChange)="setClass()">
-    <mat-option *ngFor="let option of options" [value]="option">
-      {{option | titlecase}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-<button mat-raised-button color="primary" class="button" (click)="onClick()">
-  Take snapshot
-</button>
-<canvas #canvas class="canvas"></canvas>
+<div class="mg-b-xl">
+  <video #video class="video mg-b-m" [ngClass]="currentClasses" autoplay playsinline></video>
+  <mat-form-field appearance="fill">
+    <mat-label>Filter:</mat-label>
+    <mat-select [(value)]="selectedOption" (valueChange)="setClass()">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option | titlecase}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="button" (click)="onClick()">
+    Take snapshot
+  </button>
+  <canvas #canvas class="canvas"></canvas>
+</div>
+

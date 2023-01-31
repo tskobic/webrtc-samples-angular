@@ -1,16 +1,14 @@
-.video {
-  display: block;
-  width: 320px;
-  height: 240px;
-  background: black;
-}
-
 .container {
   &-vertical {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+
+    .video {
+      width: 320px;
+      height: 240px;
+    }
   }
 
   &-horizontal {

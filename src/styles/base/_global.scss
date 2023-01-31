@@ -1,0 +1,32 @@
+:root {
+  --black: #{$black};
+  --gray: #{$gray};
+  --white: #{$white};
+  --red: #{$red};
+
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+  --font-family: #{$font-family};
+  --font-family-alt: #{$font-family-alt};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-bold: #{$font-weight-bold};
+}
+
+.active-link {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+}
+
+.mg-b-m {
+  margin-bottom: 10px;
+}
+
+.mg-b-xl {
+  margin-bottom: 100px;
+}
