@@ -27,6 +27,6 @@ export class AudioComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.stream.getTracks().forEach(track => track.stop());
+    this.stream?.getTracks().forEach(track => track.stop());
   }
 }

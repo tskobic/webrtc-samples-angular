@@ -1,14 +1,23 @@
 // Header Styles
-nav.header > ul {
+header.container {
   display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  margin: auto;
+  justify-content: center;
   align-items: center;
-  margin-top: 0;
-}
 
-nav.header li {
-  padding: 16px;
-}
+  nav > ul {
+    display: flex;
+    align-items: center;
+    margin-block: 0px;
 
-nav.header li:hover {
-  font-weight: var(--font-weight-bold);
+    li {
+      padding: 16px;
+    }
+
+    li:hover {
+      font-weight: var(--font-weight-bold);
+    }
+  }
 }
