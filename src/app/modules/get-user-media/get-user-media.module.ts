@@ -10,9 +10,10 @@ import { FilterGetUserMediaComponent } from './components/filter-get-user-media/
 import { ResolutionGetUserMediaComponent } from './components/resolution-get-user-media/resolution-get-user-media.component';
 import { AudioComponent } from './components/audio/audio.component';
 import { RecordComponent } from './components/record/record.component';
+import { PanTiltZoomComponent } from './components/pan-tilt-zoom/pan-tilt-zoom.component';
 
 @NgModule({
-  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent, AudioComponent, RecordComponent],
+  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent, AudioComponent, RecordComponent, PanTiltZoomComponent],
   imports: [CommonModule, GetUserMediaRoutingModule, SharedModule],
 })
 export class GetUserMediaModule { }

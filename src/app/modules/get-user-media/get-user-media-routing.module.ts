@@ -5,6 +5,7 @@ import { BasicGetUserMediaComponent } from './components/basic-get-user-media/ba
 import { CanvasGetUserMediaComponent } from './components/canvas-get-user-media/canvas-get-user-media.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FilterGetUserMediaComponent } from './components/filter-get-user-media/filter-get-user-media.component';
+import { PanTiltZoomComponent } from './components/pan-tilt-zoom/pan-tilt-zoom.component';
 import { RecordComponent } from './components/record/record.component';
 import { ResolutionGetUserMediaComponent } from './components/resolution-get-user-media/resolution-get-user-media.component';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
     { path: 'filter', component: FilterGetUserMediaComponent},
     { path: 'resolution', component: ResolutionGetUserMediaComponent},
     { path: 'audio', component: AudioComponent},
-    { path: 'record', component: RecordComponent}
+    { path: 'record', component: RecordComponent},
+    { path: 'pan-tilt-zoom', component: PanTiltZoomComponent}
   ]}
 ];
 

@@ -1,0 +1,27 @@
+<div class="pd-b-xl">
+  <video #video class="video mg-b-m" autoplay playsinline></video>
+  <button mat-raised-button color="primary" [disabled]="buttonDisabled" (click)="onClick()">
+    Open camera
+  </button>
+  <div class="mg-t-m">
+    <div>
+      <span>Pan:</span>
+      <mat-slider #pan disabled="true">
+        <input matSliderThumb (valueChange)="applyConstraints($event, 'pan')">
+      </mat-slider>
+    </div>
+    <div>
+      <span>Tilt:</span>
+      <mat-slider #tilt disabled="true">
+        <input matSliderThumb (valueChange)="applyConstraints($event, 'tilt')">
+      </mat-slider>
+    </div>
+    <div>
+      <span>Zoom:</span>
+      <mat-slider #zoom disabled="true">
+        <input matSliderThumb (valueChange)="applyConstraints($event, 'zoom')">
+      </mat-slider>
+    </div>
+    <p>{{errorMessage}}</p>
+  </div>
+</div>
