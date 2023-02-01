@@ -6,19 +6,19 @@
   <div class="mg-t-m">
     <div>
       <span>Pan:</span>
-      <mat-slider #pan disabled="true">
+      <mat-slider #pan disabled="true" discrete>
         <input matSliderThumb (valueChange)="applyConstraints($event, 'pan')">
       </mat-slider>
     </div>
     <div>
       <span>Tilt:</span>
-      <mat-slider #tilt disabled="true">
+      <mat-slider #tilt disabled="true" discrete>
         <input matSliderThumb (valueChange)="applyConstraints($event, 'tilt')">
       </mat-slider>
     </div>
     <div>
       <span>Zoom:</span>
-      <mat-slider #zoom disabled="true">
+      <mat-slider #zoom disabled="true" discrete>
         <input matSliderThumb (valueChange)="applyConstraints($event, 'zoom')">
       </mat-slider>
     </div>
