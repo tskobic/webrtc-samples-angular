@@ -1,0 +1,43 @@
+<div class="pd-b-xl">
+  <video #video class="video mg-b-m" autoplay playsinline></video>
+  <button mat-raised-button color="primary" (click)="onClick()">
+    Open camera
+  </button>
+  <div class="mg-t-m">
+    <mat-form-field appearance="fill">
+      <mat-label>Exposure Mode:</mat-label>
+      <mat-select [(value)]="selectedExposureMode">
+        <mat-option *ngFor="let exposureMode of exposureModes" [value]="exposureMode">
+          {{exposureMode | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <span>Exposure Time:</span>
+      <mat-slider #exposureMode disabled="true" discrete>
+        <input matSliderThumb>
+      </mat-slider>
+    </div>
+    <div>
+      <span>Exposure Compensation:</span>
+      <mat-slider #exposureCompensation disabled="true" discrete>
+        <input matSliderThumb>
+      </mat-slider>
+    </div>
+    <div>
+      <span>Brightness:</span>
+      <mat-slider #brightness disabled="true" discrete>
+        <input matSliderThumb>
+      </mat-slider>
+    </div>
+    <mat-form-field appearance="fill">
+      <mat-label>White Balance Mode:</mat-label>
+      <mat-select [(value)]="selectedWhiteBalanceMode">
+        <mat-option *ngFor="let whiteBalanceMode of whiteBalanceModes" [value]="whiteBalanceMode">
+          {{whiteBalanceMode | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p>{{errorMessage}}</p>
+  </div>
+</div>
