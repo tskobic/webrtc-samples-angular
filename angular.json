@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "webrtc-angular": {
+    "webrtc-samples-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
             "allowedCommonJsDependencies": [
               "webrtc-adapter"
             ],
-            "outputPath": "dist/webrtc-angular",
+            "outputPath": "dist/webrtc-samples-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "webrtc-angular:build:production"
+              "browserTarget": "webrtc-samples-angular:build:production"
             },
             "development": {
-              "browserTarget": "webrtc-angular:build:development"
+              "browserTarget": "webrtc-samples-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "webrtc-angular:build"
+            "browserTarget": "webrtc-samples-angular:build"
           }
         }
       }
