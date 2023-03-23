@@ -2,6 +2,8 @@
 
 Angular 15 application built according to the [WebRTC Code Samples repository](https://github.com/webrtc/samples). This application uses Angular Material, implements 5-1 SCSS Pattern architecture and Angular modules lazy-loading. To insulate the app from WebRTC browsers incompatibilities, [adapter.js](https://github.com/webrtchacks/adapter) is being used.
 
+The app is currently being worked on because not all code samples have been implemented yet.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
 ## Development server
