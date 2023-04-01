@@ -1,43 +1,81 @@
 <div class="pd-b-xl">
   <video #video class="video mg-b-m" autoplay playsinline></video>
-  <button mat-raised-button color="primary" (click)="onClick()">
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="disabled['openCamera']"
+    (click)="init()"
+  >
     Open camera
   </button>
   <div class="mg-t-m">
     <mat-form-field appearance="fill">
       <mat-label>Exposure Mode:</mat-label>
-      <mat-select [(value)]="selectedExposureMode">
-        <mat-option *ngFor="let exposureMode of exposureModes" [value]="exposureMode">
-          {{exposureMode | titlecase}}
+      <mat-select
+        [(value)]="selectedValues['exposureMode']"
+        [disabled]="disabled['exposureMode']"
+        (selectionChange)="onSelect($event, 'exposureMode')"
+      >
+        <mat-option
+          *ngFor="let mode of arraySettings['exposureMode']"
+          [value]="mode"
+        >
+          {{ mode | titlecase }}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <div>
       <span>Exposure Time:</span>
-      <mat-slider #exposureMode disabled="true" discrete>
-        <input matSliderThumb>
+      <mat-slider #exposureTime disabled="true" discrete>
+        <input
+          matSliderThumb
+          (valueChange)="applyConstraints($event, 'exposureTime')"
+        />
       </mat-slider>
     </div>
     <div>
       <span>Exposure Compensation:</span>
       <mat-slider #exposureCompensation disabled="true" discrete>
-        <input matSliderThumb>
+        <input
+          matSliderThumb
+          (valueChange)="applyConstraints($event, 'exposureCompensation')"
+        />
       </mat-slider>
     </div>
     <div>
       <span>Brightness:</span>
       <mat-slider #brightness disabled="true" discrete>
-        <input matSliderThumb>
+        <input
+          matSliderThumb
+          (valueChange)="applyConstraints($event, 'brightness')"
+        />
       </mat-slider>
     </div>
     <mat-form-field appearance="fill">
       <mat-label>White Balance Mode:</mat-label>
-      <mat-select [(value)]="selectedWhiteBalanceMode">
-        <mat-option *ngFor="let whiteBalanceMode of whiteBalanceModes" [value]="whiteBalanceMode">
-          {{whiteBalanceMode | titlecase}}
+      <mat-select
+        [(value)]="selectedValues['whiteBalanceMode']"
+        [disabled]="disabled['whiteBalanceMode']"
+        (selectionChange)="onSelect($event, 'whiteBalanceMode')"
+      >
+        <mat-option
+          *ngFor="let mode of arraySettings['whiteBalanceMode']"
+          [value]="mode"
+        >
+          {{ mode | titlecase }}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <p>{{errorMessage}}</p>
+    <button
+      mat-raised-button
+      color="primary"
+      class="refresh-button"
+      [disabled]="disabled['refreshControls']"
+      (click)="loadProperties(true)"
+      disabled="true"
+    >
+      Refresh controls
+    </button>
+    <p>{{ errorMessage }}</p>
   </div>
 </div>

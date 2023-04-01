@@ -1,4 +1,4 @@
-div > span {
+div>span {
   display: inline-block;
   width: 190px;
 }
@@ -6,4 +6,8 @@ div > span {
 mat-slider {
   margin-left: 20px;
   width: 300px;
+}
+
+.refresh-button {
+  display: block;
 }
