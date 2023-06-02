@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [],
@@ -16,7 +17,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatSelectModule,
     MatSliderModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRippleModule
   ],
   exports: [
     FormsModule,
@@ -24,7 +26,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatSelectModule,
     MatSliderModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRippleModule
   ]
 })
 export class SharedModule { }

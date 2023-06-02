@@ -7,17 +7,35 @@ header.container {
   justify-content: center;
   align-items: center;
 
-  nav > ul {
-    display: flex;
-    align-items: center;
-    margin-block: 0px;
+  nav {
+    width: 100%;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
 
-    li {
-      padding: 16px;
+    &:hover {
+      .active-link {
+        background-color: initial;
+        color: initial;
+        transition: 0.2s ease-in-out all;
+      }
     }
 
-    li:hover {
-      font-weight: var(--font-weight-bold);
+    &>ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-block: 0px;
+
+      li {
+        padding: 16px;
+
+        &:hover {
+          background-color: $red !important;
+          color: $white !important;
+          transition: 0.2s ease-in-out all;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

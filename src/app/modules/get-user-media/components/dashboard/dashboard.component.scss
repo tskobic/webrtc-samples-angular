@@ -4,20 +4,37 @@
   margin: auto;
   justify-content: center;
   align-items: center;
-}
 
-nav > ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0;
-}
+  nav {
+    width: 100%;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--black);
 
-nav li {
-  padding: 16px;
-}
+    &:hover {
+      .active-link {
+        background-color: initial;
+        color: initial;
+        transition: 0.2s ease-in-out all;
+      }
+    }
 
-nav li:hover {
-  font-weight: var(--font-weight-bold);
+    &>ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    & li {
+      padding: 16px;
+
+      &:hover {
+        background-color: red !important;
+        color: white !important;
+        transition: 0.2s ease-in-out all;
+        cursor: pointer;
+      }
+    }
+  }
 }

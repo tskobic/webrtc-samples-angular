@@ -19,8 +19,9 @@
 }
 
 .active-link {
-  font-size: $font-size-lg;
-  font-weight: $font-weight-bold;
+  background-color: $red;
+  color: $white;
+  transition: 0.2s ease-in-out all;
 }
 
 .mg-t-m {
