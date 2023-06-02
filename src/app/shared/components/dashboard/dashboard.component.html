@@ -1,0 +1,10 @@
+<div class="container">
+  <nav>
+    <ul>
+      <li [routerLink]="route.path" matRipple routerLinkActive="active-link" *ngFor="let route of routes$ | async">
+        <a>{{route.title}}</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

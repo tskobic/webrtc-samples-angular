@@ -7,9 +7,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    DashboardComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,7 +22,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatSelectModule,
     MatSliderModule,
     MatCheckboxModule,
-    MatRippleModule
+    MatRippleModule,
+    RouterModule
   ],
   exports: [
     FormsModule,
@@ -27,7 +32,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatSelectModule,
     MatSliderModule,
     MatCheckboxModule,
-    MatRippleModule
+    MatRippleModule,
+    DashboardComponent
   ]
 })
 export class SharedModule { }
