@@ -14,7 +14,21 @@ import { PanTiltZoomComponent } from './components/pan-tilt-zoom/pan-tilt-zoom.c
 import { ExposureComponent } from './components/exposure/exposure.component';
 
 @NgModule({
-  declarations: [DashboardComponent, BasicGetUserMediaComponent, CanvasGetUserMediaComponent, FilterGetUserMediaComponent, ResolutionGetUserMediaComponent, AudioComponent, RecordComponent, PanTiltZoomComponent, ExposureComponent],
-  imports: [CommonModule, GetUserMediaRoutingModule, SharedModule],
+  declarations: [
+    DashboardComponent,
+    BasicGetUserMediaComponent,
+    CanvasGetUserMediaComponent,
+    FilterGetUserMediaComponent,
+    ResolutionGetUserMediaComponent,
+    AudioComponent,
+    RecordComponent,
+    PanTiltZoomComponent,
+    ExposureComponent
+  ],
+  imports: [
+    CommonModule,
+    GetUserMediaRoutingModule,
+    SharedModule
+  ],
 })
 export class GetUserMediaModule { }

@@ -10,20 +10,21 @@
     margin-bottom: 16px;
     border-bottom: 1px solid var(--black);
 
-    &:hover {
-      .active-link {
-        background-color: initial;
-        color: initial;
-        transition: 0.2s ease-in-out all;
-      }
-    }
-
     &>ul {
+      width: fit-content;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: 0;
+      margin: 0 auto;
+
+      &:hover {
+        .active-link {
+          background-color: initial;
+          color: initial;
+          transition: 0.2s ease-in-out all;
+        }
+      }
     }
 
     & li {

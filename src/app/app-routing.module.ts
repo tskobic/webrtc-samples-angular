@@ -14,10 +14,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/devices/devices.module').then((m) => m.DevicesModule),
   },
+  {
+    path: 'rtc-peer-connection',
+    loadChildren: () =>
+      import('./modules/rtc-peer-connection/rtc-peer-connection.module').then((m) => m.RtcPeerConnectionModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
