@@ -10,8 +10,6 @@ export class BasicGetUserMediaComponent implements OnDestroy {
 
   stream!: MediaStream;
 
-  constructor() {}
-
   async onClick() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({

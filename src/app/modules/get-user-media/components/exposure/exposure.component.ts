@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 
-import { MatSlider, MatSliderDragEvent } from '@angular/material/slider';
+import { MatSlider } from '@angular/material/slider';
 
 @Component({
   selector: 'app-exposure',
@@ -46,8 +46,6 @@ export class ExposureComponent implements AfterViewInit, OnDestroy {
   videoTrack!: MediaStreamTrack;
   errorMessage = '';
 
-  constructor() {}
-
   ngAfterViewInit(): void {
     this.controls = {
       exposureTime: this.exposureTime,
@@ -80,7 +78,9 @@ export class ExposureComponent implements AfterViewInit, OnDestroy {
   }
 
   loadProperties(refreshValuesOnly: boolean) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const capabilities = this.videoTrack.getCapabilities() as any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const settings = this.videoTrack.getSettings() as any;
     console.log('Capabilities: ', capabilities);
     console.log('Settings: ', settings);
@@ -130,6 +130,7 @@ export class ExposureComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private handleError(error: any) {
     if (error.name === 'NotAllowedError') {
       this.showErrorMessage(

@@ -31,14 +31,13 @@ export class PanTiltZoomComponent implements AfterViewInit, OnDestroy {
   buttonDisabled = false;
   errorMessage = '';
 
-  constructor() {}
-
   ngAfterViewInit(): void {
     this.controls = { pan: this.pan, tilt: this.tilt, zoom: this.zoom };
   }
 
   async onClick() {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const stream = await (navigator.mediaDevices as any).getUserMedia(
         this.constraints
       );
@@ -80,6 +79,7 @@ export class PanTiltZoomComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private handleError(error: any) {
     if (error.name === 'NotAllowedError') {
       this.showErrorMessage(
@@ -91,6 +91,7 @@ export class PanTiltZoomComponent implements AfterViewInit, OnDestroy {
     this.showErrorMessage(`getUserMedia error: ${error.name}`, error);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private showErrorMessage(message: string, err?: any) {
     this.errorMessage = message;
     console.log(message);
